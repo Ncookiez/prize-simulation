@@ -24,7 +24,7 @@ const prizeTiers = [
 /* ========================================================================================================================================================================= */
 
 // Function to simulate prize APR:
-const simulatePrizeAPR = async () => {
+const simulatePrizeAPR = () => {
   
   // Finding Appropriate Scaling For Efficiency:
   if(depositAmount >= 50000) {
@@ -35,7 +35,7 @@ const simulatePrizeAPR = async () => {
     scaling = depositAmount / 50;
   }
 
-  // Finding total prize data:
+  // Finding Total Prize Data:
   prizeTiers.forEach(tier => {
     totalDailyPrizeAmount += tier.prize * tier.num;
     totalDailyPrizeCount += tier.num;
