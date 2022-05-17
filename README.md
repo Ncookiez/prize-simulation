@@ -1,7 +1,5 @@
 # PoolTogether Prize APR Simulation
 
----
-
 ## Usage
 
 Simulation settings are available at the top of `prizeSimulation.js`.
