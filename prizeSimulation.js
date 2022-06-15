@@ -1,6 +1,6 @@
 
 // Settings Import:
-import { depositAmounts, tvl, maxPrizes, prizeTiers, simulationDays, simulationRuns } from './config';
+const { depositAmounts, tvl, maxPrizes, prizeTiers, simulationDays, simulationRuns } = require('./config');
 
 /* ========================================================================================================================================================================= */
 
