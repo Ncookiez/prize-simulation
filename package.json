@@ -1,6 +1,6 @@
 {
   "name": "prize-simulation",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "prizeSimulation.js",
   "scripts": {
     "start": "node prizeSimulation.js",

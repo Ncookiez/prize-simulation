@@ -12,6 +12,7 @@ const calculatePrizeAPR = () => {
     let dailyPrizeCount = 0;
     let winnings = 0;
     let cumulativeMaxPrizes = 0;
+    let expectedYearlyWins = '';
 
     // Finding Total Prize Data:
     prizeTiers.forEach(tier => {
@@ -28,13 +29,41 @@ const calculatePrizeAPR = () => {
       if(cumulativeMaxPrizes < maxPrizes) {
         cumulativeMaxPrizes = Math.min(cumulativeMaxPrizes + expectedWins, maxPrizes);
       }
+      if(expectedWins > 0) {
+        expectedYearlyWins += `${formatWins(expectedWins)} $${tier.prize} wins, `;
+      }
     });
 
     // Calculating APR:
     let apr = (winnings * 365 / depositAmount) * 100;
     console.log(`Estimated APR for $${depositAmount}: ${apr.toFixed(2)}%`);
 
+    // Displaying Expected Yearly Wins:
+    console.log('  - Expected', expectedYearlyWins.slice(0, expectedYearlyWins.length - 2) + '.');
+
   });
+}
+
+/* ========================================================================================================================================================================= */
+
+// Helper function to prettify wins output:
+const formatWins = (wins) => {
+  let yearlyWins = wins * 365;
+  if(yearlyWins > 10) {
+    return yearlyWins.toFixed(0);
+  } else if(yearlyWins > 1) {
+    return yearlyWins.toFixed(1);
+  } else if(yearlyWins > 0.1) {
+    return yearlyWins.toFixed(2);
+  } else if(yearlyWins > 0.01) {
+    return yearlyWins.toFixed(3);
+  } else if(yearlyWins > 0.001) {
+    return yearlyWins.toFixed(4);
+  } else if(yearlyWins > 0.0001) {
+    return yearlyWins.toFixed(5);
+  } else {
+    return yearlyWins.toFixed(6);
+  }
 }
 
 /* ========================================================================================================================================================================= */
