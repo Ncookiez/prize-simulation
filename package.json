@@ -1,9 +1,10 @@
 {
   "name": "prize-simulation",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "prizeSimulation.js",
   "scripts": {
-    "start": "node prizeSimulation.js"
+    "start": "node prizeSimulation.js",
+    "calc": "node prizeCalculation.js"
   },
   "dependencies": {}
 }

@@ -2,6 +2,8 @@
 
 ## Usage
 
-Simulation settings are available at the top of `prizeSimulation.js`.
+Change the settings at `config.js` to whatever your preference.
 
-Run `npm start` to simulate prizes based on your inputs.
+Use `npm start` to simulate prizes based on your inputs.
+
+Alternatively, use `npm run calc` to calculate estimated prizes very quickly.
